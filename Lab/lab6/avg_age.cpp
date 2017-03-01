@@ -1,0 +1,74 @@
+// avg_age.cpp
+//    Purpose: reads data until a sentinel, then asks for and reads an input
+//             name, then prints the average age for the specified name
+//
+//    Name: STUDENT ONE
+//    Date: 08/10/2015
+
+#include<iostream>
+using namespace std;
+
+// global constants
+const int SPACE = 5;		// DO NOT CHANGE THIS LINE IN ANY WAY
+const int SENTINEL = -1;
+const int CURRENT_YEAR = 2015;
+
+// function definitions
+double average(int nums[], string names[], string n, int len);
+
+int main() {
+        int years[SPACE]; 	// DO NOT CHANGE THIS LINE IN ANY WAY
+        string names[SPACE];	// DO NOT CHANGE THIS LINE IN ANY WAY
+        int i = 0;
+        int y;
+        double avg = -1;
+        string n;
+
+        do {
+                cin >> y >> n;
+                if ( y != SENTINEL ){
+                        if(i >= SPACE) {
+                                cout << "too much data" << endl;
+                                return 1;
+                        }
+                        names[i] = n;
+                        years[i++] = y;
+                }
+        } while (y != SENTINEL);
+
+        cout << "Enter a name:";
+        cin >> n;
+
+        avg = average(years, names, n, i);   // one error here.
+
+        if(avg != -1)
+                cout << "average age = " << avg << endl;
+        else
+                cout << "name not found"  << endl;
+
+        return 0;
+}
+
+// Purpose: finds the average age of the target name
+// Arguments: takes an integer array of birth years, string array of names,
+//            the target name as a string, number of elements in array
+// Returns: returns the average age of the target name as a double
+double average(int nums[SPACE], string names[SPACE], string n, int len) {
+
+        double sum = 0;
+        int i = 0;
+        int count = 0;
+
+        while( i < len ){
+                if(names[i] == n) {
+                        sum = sum + CURRENT_YEAR - nums[i];
+                        count++;
+                }
+                i++;
+        }
+
+        if(count == 0)
+                return -1;
+
+        return sum/count;
+}

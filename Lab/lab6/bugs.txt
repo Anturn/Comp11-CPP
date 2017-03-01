@@ -1,0 +1,7 @@
+try to find a bug
+name: Rui Qin
+date 3/8/2016
+
+1. some semicolons are deleted
+2. one function line is deleted
+3. one i(in the loop function) is changed

@@ -1,0 +1,189 @@
+/*******************************************************************************
+ * pacman Class Implementation *
+ * For Pacman Game (COMP 11 Project 1 | 2016 Spring)                           *
+ *****************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+#include "termfuncs.h"
+#include "constants.h"
+#include "boulder.h"
+#include "pacman.h"
+
+// constructor sets up the initial direction of pacman
+// and the location of it
+Pacman::Pacman() {
+        head = UP;
+        alive = 1;
+        center();
+        num_moves = 0;
+}
+
+// this fuction sets up the initial location
+// of the pacman
+void Pacman::center() {
+        row = (ROWS - 1) / 2;
+        col = (COLS - 1) / 2;
+        head = UP;
+}
+
+// inout: the board and the char command
+// output: the boolean decides wetehr the pacman eate a dot
+// this function takes the command from the user and gives
+// out the bool decides wether the pacman eats a dot and sets
+// up wether the pacman encounters the ghost
+bool Pacman::move(char board[ROWS][COLS], char command) {
+        board[row][col] = SPACE;
+        num_moves++;
+        if (command == CMD_UP) {
+                return_up(board);
+
+        } else if (command == CMD_DWN) {
+                return_down(board);
+        }
+
+        else if (command == CMD_LFT) {
+                return_left(board);
+        }
+
+        else if (command == CMD_RGT) {
+                return_right(board);
+        }
+
+        if (board[row][col] == GHOST) {
+                alive = false;
+        }
+
+        if (board[row][col] == DOT) {
+                return true;
+        } else {
+                return false;
+        }
+}
+
+// inout: the int of col from outside function
+// this function sets col in private to value from ooutside
+// function
+void Pacman::set_col(int col_outside) {
+        col = col_outside;
+}
+
+// inout: the int of row from outside function
+// this function sets row in private to value from ooutside
+// function
+void Pacman::set_row(int row_outside) {
+        row = row_outside;
+}
+
+// inout: the board
+// this function sets up the location of the
+// pacman to the head
+void Pacman::place_on_board(char board[ROWS][COLS]) {
+        board[row][col] = head;
+}
+
+// return a int which is the col of pacman in the
+// private
+int Pacman::get_col() {
+        return col;
+}
+
+// return a int which is the row of pacman in the
+// private
+int Pacman::get_row() {
+        return row;
+}
+
+// return a boolean that decides wether the pacman is
+// dead from the private
+bool Pacman::is_alive() {
+        return alive;
+}
+
+// set up boolean alive in private
+void Pacman::set_alive(bool outside_alive) {
+        alive = outside_alive;
+}
+
+// inout: the board
+// this function changes the row and col in private
+// when the command is w--up
+void Pacman::return_up(char board[ROWS][COLS]) {
+        row = row - 1;
+
+        if (board[row][col] == BOULDER) {
+                row = row + 1; // because not moving,  return that minus 1
+        } else if ((row < 0) && (board[ROWS - 1][col] == BOULDER)) {
+                row = row + 1;
+        } else if (row < 0) {
+                row = ROWS - 1;
+        }
+        head = UP;
+}
+
+// inout: the board
+// this function changes the row and col in private
+// when the command is s--down
+void Pacman::return_down(char board[ROWS][COLS]) {
+        row = row + 1;
+
+        if (board[row][col] == BOULDER) {
+                row = row - 1; // because not moving,  return that plus 1
+        } else if ((row > ROWS - 1) && (board[0][col] == BOULDER)) {
+                row = row - 1;
+        } else if (row > ROWS - 1) {
+                row = 0;
+        }
+        head = DOWN;
+}
+
+// inout: the board
+// this function changes the row and col in private
+// when the command is a--left
+void Pacman::return_left(char board[ROWS][COLS]) {
+        col = col - 1;
+
+        if (col >= 0) {
+                if (board[row][col] == BOULDER) {
+                        col =
+                            col + 1; // because not moving,  return that minus 1
+                }
+        } else if ((col < 0) && (board[row][COLS - 1] == BOULDER)) {
+                col = col + 1;
+        } else if (col < 0) {
+                col = COLS - 1;
+        }
+        head = LEFT;
+}
+
+// inout: the board
+// this function changes the row and col in private
+// when the command is d--right
+void Pacman::return_right(char board[ROWS][COLS]) {
+        col = col + 1;
+
+        if (board[row][col] == BOULDER) {
+                col = col - 1; // because not moving,  return that plus 1
+        } else if ((col > COLS - 1) && (board[row][0] == BOULDER)) {
+                col = col - 1;
+        } else if (col > COLS - 1) {
+                col = 0;
+        }
+        head = RIGHT;
+}
+
+/* takes an integer n, and adds n to the Pacman's score */
+void Pacman::add_to_score(int n) {
+        score = n;
+}
+
+/* returns the Pacman's score */
+int Pacman::get_score() {
+        return score;
+}
+
+/* return the private int to outside function*/
+int Pacman::get_num_moves() {
+        return num_moves;
+}

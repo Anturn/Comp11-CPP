@@ -1,0 +1,23 @@
+created by Rui Qin
+date : 2/3/2016
+
+
+
+
+a.      D0
+b.      D1
+c.      AB12D6
+d.      AB9C16
+
+e.      3  2     
+f.      10 2
+g.      3  4
+
+h.      14 2
+i.      NO, definitely not. Beacause for the last part of "if``````else" 
+        conditional, it's either producing a "C" or "D", it will never
+        produce both of them.
+
+j.      NO, definitely not. Because because for that part of the code which
+        contains two "if" conditionals, If must go through the first "if" and 
+        will produce "A" first and decide whether to continue then.

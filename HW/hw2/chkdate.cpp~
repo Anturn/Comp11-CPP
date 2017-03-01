@@ -1,0 +1,94 @@
+//         chkdate.cpp -- program to tell if it is a right year month and day
+//         input : year month and day
+//         output: "Y"--right date or "N"--wrong date
+//         created by : Rui Qin
+//         date : 2/3/2016
+
+#include <iostream>
+using namespace std;
+
+const int BIGGEST_YEAR = 9999; // This constant decides the biggest number of
+                               // year the player can input
+const int SMALLEST_YEAR =
+    1; // This constant decides the smallest number of year the player can input
+const int BIGGEST_MONTH = 12; // This constant decides the biggest number of
+                              // month the player can input
+const int SMALLEST_MONTH = 1; // This constant decides the smallest number of
+                              // month the player can input
+const int DAYS31 =
+    31; // This constant decides the biggest number of day the player can input
+const int DAYS30 = 30; // This constant decides the biggest number of day for
+                       // some months the player can input
+const int DAYS29 = 29; // This constant decides the biggest number of day in Feb
+                       // the player can input
+const int FIRSTDAY =
+    1; // This constant decides the smallest number of day the player can input
+
+const int JAN = 1, MAR = 3, MAY = 5, JUL = 7, AUG = 8, OCT = 10, DEC = 12;
+const int APR = 4, JUN = 6, SEP = 9, NOV = 11;
+const int FEB = 2;
+
+bool isLeapYear(int month2); // This function created by me to decide whether it
+                             // is a leap year
+
+int main() {
+        int month, day, year;
+
+        cin >> month >> day >> year;
+
+        if (year > BIGGEST_YEAR ||
+            year < SMALLEST_YEAR) { // If the year is bigger or smaller than the
+                                    // specified year,then "N" and return back
+                cout << "N" << endl;
+                return 0;
+        }
+
+        if (month > BIGGEST_MONTH ||
+            month < SMALLEST_MONTH) { // If the month is bigger or smaller than
+                                      // the specified month,then"N" and return
+                                      // back
+                cout << "N" << endl;
+                return 0;
+        }
+
+        if (day > DAYS31 || day < FIRSTDAY) { // If the day is bigger or smaller
+                                              // than the specified day,then "N"
+                                              // and return back
+                cout << "N" << endl;
+                return 0;
+        }
+
+        if ((month == JAN || month == MAR || month == MAY || month == JUL ||
+             month == AUG || month == OCT || month == DEC) &&
+            (day >= FIRSTDAY &&
+             day <= DAYS31)) { // This is the month contains 31 days
+                cout << "Y" << endl;
+        } else if ((month == APR || month == JUN || month == SEP ||
+                    month == NOV) &&
+                   (day >= FIRSTDAY &&
+                    day <= DAYS30)) { // This is the month contains 30 days
+                cout << "Y" << endl;
+        } else if ((month == FEB) &&
+                   (day >= FIRSTDAY &&
+                    day < DAYS29)) { // This is special month Feb
+                cout << "Y" << endl;
+        } else if ((month == FEB) && (day == DAYS29) &&
+                   (isLeapYear(year) == true)) {
+                cout << "Y" << endl;
+        } else {
+                cout << "N" << endl;
+        }
+
+        return 0;
+}
+
+bool isLeapYear(int year) { // This is a boolean function to decide wether a
+                            // year is a leap year
+        if ((year % 4 == 0) && (year % 100 != 0)) {
+                return true;
+        } else if ((year % 4 == 0) && (year % 100 == 0) && (year % 400)) {
+                return true;
+        } else {
+                return false;
+        }
+}

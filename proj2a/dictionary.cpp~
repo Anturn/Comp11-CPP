@@ -1,0 +1,86 @@
+// dictionary.cpp
+// Purpose: To implement the Dictionary class
+//          for storing a list of words to search
+// By:      
+// Date:    
+//
+#include "dictionary.h"
+#include <fstream>
+
+using namespace std;
+
+// constructor
+Dictionary::Dictionary()
+{	
+	capacity = CAPACITY;
+	num_elements = 0;
+	wordlist = new string[CAPACITY];
+	for(int i=0; i < CAPACITY;i++){
+		wordlist[i] = "";
+	}
+	read_dict_from_file(DICT_FILE);
+}
+
+// destructor
+Dictionary::~Dictionary()
+{
+	delete[] wordlist;
+}
+
+
+// input: none
+// output: none
+// purpose: expand the array when the output is bigger 
+// than the existed volume of array
+void Dictionary::expand()
+{	
+	string *temp;
+	temp = new string[capacity*2];
+	for(int i=0;i<capacity;i++){
+		temp[i] = wordlist[i];
+	}
+	delete [] wordlist;
+	wordlist = temp;
+	capacity *=2;
+	
+}
+
+// input: string, a word
+// output: booleam, true or false
+// purpose: expand the array when the output is bigger 
+// than the existed volume of array
+bool Dictionary::has_word(std::string word)
+{
+	for (int i=0;i<num_elements;i++){
+		string current_word = wordlist[i];
+		if(current_word==word){
+			return true;
+		}
+	}
+	return false;
+	
+}
+
+
+
+
+
+// read_dict_from_file()
+// Purpose: Read the words in from the file
+// Arguments: none
+// Return value: none
+// Note: WORDFILE holds a path to the list file
+void Dictionary::read_dict_from_file(string filename)
+{
+        ifstream word_file;
+        string next_word;
+        word_file.open(filename.c_str());
+        while (getline(word_file,next_word)){
+                wordlist[num_elements] = next_word;
+                num_elements++;
+                if (num_elements == capacity){
+                        expand();
+                }
+        }
+}
+

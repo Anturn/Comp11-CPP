@@ -1,0 +1,255 @@
+/*
+ * histogram.cpp
+ * purpose: reads year data, prints a histogram of the values
+ *      by: Rui Qin
+ *      date:2/22/2016
+ */
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+const int NUM_BUCKETS = 15; // how many buckets are in our histogram
+const int MAX_COUNT = 60;   // stop at MAX_COUNT per bucket
+const int SPACE = 30001;
+const int SENTINEL = -1;
+
+/////////////////////////////////////////////////////////////////////////
+///////////////////////////   Interfaces  ///////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+// Declare functions
+void histogram(int array[SPACE], int buckets[NUM_BUCKETS], int min, int max);
+int max(int array[SPACE]);
+int min(int array[SPACE]);
+void print_histogram(int buckets[NUM_BUCKETS], int min_value, int max_value);
+void print_one_bucket(int buckets[NUM_BUCKETS], int max_digits,
+                      int bucket_division, int bucket_num, int min_value,
+                      int max_value);
+int num_digits(int n);
+void print_padding(int n, char x);
+int divide_bucket(int min, int max, int number_of_buckets);
+void initialize_array(int array[], int length);
+
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////   Client  /////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+int main() {
+        int years[SPACE];
+        int buckets[NUM_BUCKETS];
+
+        int pos = 0;
+        int y;
+
+        do {
+                if (pos < SPACE) {
+                        cin >> y;
+                        years[pos++] = y;
+                } else {
+                        cout << "too much input" << endl;
+                        return 1;
+                }
+        } while (y != SENTINEL);
+
+        // TODO: put in code to read in the years (you can copy this
+        //       directly from your code from 4-2).
+        //       The "years" array should be populated with the
+        //       years that were read in, plus the SENTINEL
+
+        // Leave the following code as-is
+        int low = min(years);
+        int high = max(years);
+        histogram(years, buckets, low, high);
+        print_histogram(buckets, low, high);
+        return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////
+///////////////////////////   Abstraction ///////////////////////////////
+///////////////////////////     Barrier   ///////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+//////////////////////////  Implementations /////////////////////////////
+
+// TODO: Fill in the following functions
+
+// max
+// Purpose: to return the max of an array of ints
+// Arguments: an integer array with a SENTINEL as the last element.
+// Return value: the maximum of the array,
+//               and -1 if the only value
+//               in the array is the sentinel.
+int max(int Myarray[SPACE]) {
+        int Mymax;
+        int i = 0;
+        Mymax = Myarray[0];
+
+        if (Mymax == SENTINEL) {
+                return 1;
+        } else {
+                while ((i < SPACE) && (Myarray[i] != SENTINEL)) {
+                        if (Myarray[i] > Mymax) {
+                                Mymax = Myarray[i];
+                        }
+                        i = i + 1;
+                }
+        }
+        return Mymax;
+}
+
+// min
+// Purpose: to return the min of an array of ints
+// Arguments: an integer array with a SENTINEL as the last element.
+// Return value: the minimum of the array,
+//               and -1 if the only value
+//               in the array is the sentinel.
+int min(int Myarray[SPACE]) {
+        int Mymin = Myarray[0];
+        int i = 0;
+
+        if (Mymin == SENTINEL) {
+                return 1;
+        } else {
+                while ((i < SPACE) && (Myarray[i] != SENTINEL)) {
+                        if (Myarray[i] < Mymin) {
+                                Mymin = Myarray[i];
+                        }
+                        i = i + 1;
+                }
+        }
+        return Mymin;
+        //        TODO: // write this function
+}
+
+// histogram
+// Purpose: put the count of values into NUM_BUCKETS number of buckets
+// Arguments: the array with the values, an array that will hold the
+//            counts of each value, the minimum value in the buckets
+//            and the maximum value in the buckets
+void histogram(int array[SPACE], int buckets[NUM_BUCKETS], int min, int max) {
+        int size, left, right;
+        int i = 0;
+
+        size = divide_bucket(min, max, NUM_BUCKETS);
+
+        while (i < NUM_BUCKETS) {
+                int number_elements = 0;
+                int j = 0;
+                left = min + i * size;
+                right = min + (1 + i) * size - 1;
+
+                while ((j < SPACE) && (array[j] != SENTINEL)) {
+                        if ((left <= array[j]) && (array[j] <= right)) {
+                                number_elements = number_elements + 1;
+                        }
+                        j = j + 1;
+                }
+                buckets[i] = number_elements;
+                i = i + 1;
+        }
+
+        // TODO: // write this function (note: the buckets need to be
+        // initialized)
+        // hint: you can use the divide_bucket() function (see below)
+        //       to retrieve the "width" of each bucket. E.g.,
+        //       if divide_bucket() returns 10, then there are 10
+        //       years that map to one bucket
+}
+
+/////////////////////////////////////////////////////////////////////////
+///////////////////////////   Functions written   ///////////////////////
+///////////////////////////        for you        ///////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+// initialize_array
+// Purpose: to clear all values from an array and set them to zero
+// Arguments: an integer array and the length of the array
+// Return value: none
+void initialize_array(int array[], int length) {
+        // empty buckets
+        for (int i = 0; i < length; i++) {
+                array[i] = 0;
+        }
+}
+
+// divide_bucket
+// Purpose: determine the range for each bucket in a histogram
+// Arguments: the minimum value, the maximum value, and the
+//            number of buckets.
+// Return value: the range of each bucket (e.g., the number
+//               of values that will map to one bucket
+int divide_bucket(int min, int max, int number_of_buckets) {
+        return (max - min) / number_of_buckets + 1;
+}
+
+// print_histogram
+// Purpose: to print out the histogram
+// Arguments: an array of buckets, the min and the max
+// Return value: none
+void print_histogram(int buckets[NUM_BUCKETS], int min_value, int max_value) {
+        // determine the range of the buckets
+        int bucket_division = divide_bucket(min_value, max_value, NUM_BUCKETS);
+        int max_digits = num_digits(max_value);
+
+        for (int i = 0; i < NUM_BUCKETS; i++) {
+                print_one_bucket(buckets, max_digits, bucket_division, i,
+                                 min_value, max_value);
+        }
+}
+
+// print_one_bucket
+// Purpose: to print one bucket of a histogram
+// Arguments: array: the bucket values
+//            max_digits: the number of digits per number in the range
+//            bucket_division: the range for each bucket
+//            bucket_num: the bucket we want to print
+// Return value: none
+void print_one_bucket(int buckets[NUM_BUCKETS], int max_digits,
+                      int bucket_division, int bucket_num, int min_value,
+                      int max_value) {
+        int low_bucket = bucket_division * bucket_num + min_value;
+        int high_bucket = bucket_division * (bucket_num + 1) + min_value - 1;
+
+        // only print up to the max bucket
+        if (high_bucket <= max_value + bucket_division - 1) {
+                print_padding(max_digits - num_digits(low_bucket), '0');
+                cout << low_bucket << "-";
+
+                print_padding(max_digits - num_digits(high_bucket), '0');
+                cout << high_bucket << ":";
+
+                int count = buckets[bucket_num];
+                if (count > MAX_COUNT) { // limit the number of Xs
+                        count = MAX_COUNT;
+                }
+                for (int j = 0; j < count;
+                     j++) { // print out count number of Xs
+                        cout << "X";
+                }
+                if (count < buckets[bucket_num]) {
+                        // too many! just print number
+                        cout << "(" << buckets[bucket_num] << ")";
+                }
+                cout << endl;
+        }
+}
+
+// num_digits
+// Purpose: to return the number of digits in a number
+// Arguments: an integer, n
+// Return value: the number of digits in n
+int num_digits(int n) {
+        if (n == 0) {
+                return 1;
+        }
+        return (int)ceil(log(n) / log(10));
+}
+
+// print_padding
+// Purpose: to print a character n number of times
+// Arguments, n: the number of times to print the character, x
+// Return value: none
+void print_padding(int n, char x) {
+        for (int pad = 0; pad < n; pad++) {
+                cout << x;
+        }
+}

@@ -1,0 +1,133 @@
+Script started on Wed 27 Jan 2016 08:25:29 PM EST
+rqin01(RuiQin)@dell24:~/Desktop/comp11/hw1 > hostname
+dell24
+rqin01(RuiQin)@dell24:~/Desktop/comp11/hw1 > who
+ngilbe01 pts/0        2016-01-27 19:17 (10.244.141.140)
+jespin03 pts/2        2016-01-27 20:22 (resnet142-230.medford.tufts.edu)
+zfaber01 pts/3        2016-01-27 19:21 (10.245.150.9)
+molay    pts/4        2016-01-27 08:08 (pool-108-49-161-218.bstnma.east.verizon.net)
+mbauer01 pts/5        2016-01-27 19:08 (dell14.eecs.tufts.edu)
+sbarlo02 pts/6        2016-01-27 18:41 (209-6-54-72.c3-0.smr-ubr1.sbo-smr.ma.cable.rcn.com)
+eorozc01 pts/7        2016-01-27 20:04 (10.244.140.157)
+cphife01 pts/8        2016-01-27 19:47 (10.245.141.22)
+uuusta01 pts/9        2016-01-27 20:18 (10.245.147.25)
+rkrish03 pts/11       2016-01-27 18:30 (pool-71-126-244-56.bstnma.fios.verizon.net)
+ddinji01 pts/14       2016-01-27 20:08 (resnet136-180.medford.tufts.edu)
+sslate02 pts/15       2016-01-27 20:10 (wr-130-64-96-232.medford.tufts.edu)
+ehsu01   pts/16       2016-01-27 18:46 (10.245.140.40)
+dchen12  pts/17       2016-01-27 19:27 (resnet155-221.medford.tufts.edu)
+bfulig01 pts/18       2016-01-27 20:01 (resnet136-16.medford.tufts.edu)
+chandler pts/19       2016-01-27 19:34 (209-6-43-8.c3-0.smr-ubr1.sbo-smr.ma.cable.rcn.com)
+nficet01 pts/20       2016-01-27 19:42 (10.247.142.197)
+dscull02 pts/22       2016-01-27 20:01 (209-6-200-18.c3-0.smr-ubr2.sbo-smr.ma.cable.rcn.com)
+lrenne01 pts/23       2016-01-27 19:28 (d-p-13-251.eecs.tufts.edu)
+rqin01   pts/24       2016-01-27 20:15 (10.244.140.214)
+mli04    pts/28       2016-01-27 20:03 (c-73-238-187-64.hsd1.ma.comcast.net)
+tlauri02 pts/25       2016-01-27 19:17 (10.244.140.55)
+spokha01 pts/26       2016-01-27 19:45 (c-76-119-49-66.hsd1.nh.comcast.net)
+jengel01 pts/27       2016-01-27 19:35 (10.245.149.111)
+bfulig01 pts/29       2016-01-27 20:04 (localhost:27.0)
+mmorsc01 pts/30       2016-01-27 20:11 (10.247.149.173)
+btaint01 pts/31       2016-01-27 19:29 (10.245.141.109)
+eorozc01 pts/32       2016-01-27 20:04 (localhost:23.0)
+shalls01 pts/33       2016-01-27 20:09 (wr-130-64-196-118.medford.tufts.edu)
+bthorn03 pts/34       2016-01-27 20:18 (10.245.146.96)
+spector  pts/35       2016-01-27 20:19 (c-76-19-146-188.hsd1.ma.comcast.net)
+sbarlo02 pts/36       2016-01-27 19:23 (130.64.23.165)
+lstern05 pts/37       2016-01-27 20:09 (130.64.98.6)
+mbelki01 pts/38       2016-01-27 20:06 (10.245.151.97)
+ccowel02 pts/39       2016-01-27 19:17 (10.245.151.242)
+agalan01 pts/40       2016-01-27 20:25 (10.247.142.70)
+lguerr02 pts/41       2016-01-27 19:37 (c-24-62-94-8.hsd1.ma.comcast.net)
+lhague01 pts/42       2016-01-27 20:06 (10.245.148.121)
+jkerns01 pts/43       2016-01-27 20:07 (wr-130-64-94-99.medford.tufts.edu)
+tjoshi01 pts/44       2016-01-27 19:45 (d-p-14-55.eecs.tufts.edu)
+cwollm01 pts/45       2016-01-27 17:18 (c-66-31-40-10.hsd1.ma.comcast.net)
+jgrace03 pts/46       2016-01-27 20:07 (resnet142-128.medford.tufts.edu)
+hjin04   pts/47       2016-01-27 20:22 (10.245.145.79)
+emille19 pts/48       2016-01-27 19:49 (wr-130-64-195-205.medford.tufts.edu)
+dharri14 pts/49       2016-01-27 20:23 (10.247.138.87)
+spokha01 pts/50       2016-01-27 19:52 (c-76-119-49-66.hsd1.nh.comcast.net)
+rqin01   pts/51       2016-01-27 20:25
+edobra01 pts/52       2016-01-27 19:57 (resnet155-189.medford.tufts.edu)
+ccasey01 pts/53       2016-01-27 20:08 (d-p-13-253.eecs.tufts.edu)
+jbrone01 pts/54       2016-01-27 20:09 (c-98-217-9-35.hsd1.ma.comcast.net)
+kfisher  pts/56       2016-01-27 20:11 (sslvpn23.eecs.tufts.edu)
+afalk01  pts/55       2016-01-27 19:58 (10.245.150.228)
+mpatel13 pts/57       2016-01-27 20:09 (10.245.148.214)
+kander12 pts/58       2016-01-27 19:58 (wr-130-64-92-204.medford.tufts.edu)
+jmatth03 pts/59       2016-01-27 20:11 (209-6-46-9.c3-0.smr-ubr1.sbo-smr.ma.cable.rcn.com)
+msheldon pts/60       2016-01-27 20:11 (pool-74-104-164-104.bstnma.fios.verizon.net)
+cwollm01 pts/63       2016-01-27 19:58 (c-66-31-40-10.hsd1.ma.comcast.net)
+mstewa07 pts/68       2016-01-27 19:59 (10.245.151.26)
+rqin01(RuiQin)@dell24:~/Desktop/comp11/hw1 > w
+ 20:25:45 up 20 days, 10:54, 58 users,  load average: 3.28, 3.52, 3.60
+USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
+ngilbe01 pts/0    10.244.141.140   19:17   27:10   6:57   0.12s -tcsh
+jespin03 pts/2    resnet142-230.me 20:22   16.00s  0.19s  0.08s vim avg.cpp
+zfaber01 pts/3    10.245.150.9     19:21   55:40   0.10s  0.10s -tcsh
+molay    pts/4    pool-108-49-161- 08:08   11:50m  0.38s  0.38s -tcsh
+mbauer01 pts/5    dell14.eecs.tuft 19:08    1:16m  0.04s  0.04s -bash
+sbarlo02 pts/6    209-6-54-72.c3-0 18:41   57:40   2.75s  2.66s ssh -X sbarlo02@homework.cs.tufts.edu
+eorozc01 pts/7    10.244.140.157   20:04   21:38   5.00s  4.92s kate
+cphife01 pts/8    10.245.141.22    19:47    6:13   1.40s  1.17s emacs List_dynamic_array.cpp
+uuusta01 pts/9    10.245.147.25    20:18    4:38   3.22s  0.06s -tcsh
+rkrish03 pts/11   pool-71-126-244- 18:30    1:24m  0.20s  0.07s vim solution.imp
+ddinji01 pts/14   resnet136-180.me 20:08   11:16   0.10s  0.02s man scanf
+sslate02 pts/15   wr-130-64-96-232 20:10    8:29   3.93s  0.09s -tcsh
+ehsu01   pts/16   10.245.140.40    18:46    5.00s  0.14s  0.14s -tcsh
+dchen12  pts/17   resnet155-221.me 19:27   47:33  28.93s  0.09s -tcsh
+bfulig01 pts/18   resnet136-16.med 20:01   23:52   8.03s  0.06s -tcsh
+chandler pts/19   209-6-43-8.c3-0. 19:34   47:33   0.09s  0.00s less ref.imp
+nficet01 pts/20   10.247.142.197   19:42   43:28   7:35   0.07s -tcsh
+dscull02 pts/22   209-6-200-18.c3- 20:01   19:15   0.21s  0.15s vim hookbook.cpp
+lrenne01 pts/23   d-p-13-251.eecs. 19:28   56:48   0.08s  0.08s -tcsh
+rqin01   pts/24   10.244.140.214   20:15    0.00s  0.12s  0.00s script
+mli04    pts/28   c-73-238-187-64. 20:03   15:04   0.19s  0.19s -tcsh
+tlauri02 pts/25   10.244.140.55    19:17   27.00s  9:01   0.11s -tcsh
+spokha01 pts/26   c-76-119-49-66.h 19:45    9:14  23.02s 22.92s python3
+jengel01 pts/27   10.245.149.111   19:35   41:00   9:13   0.09s -tcsh
+bfulig01 pts/29   localhost:27.0   20:04   20:35   0.03s  0.03s -bin/tcsh
+mmorsc01 pts/30   10.247.149.173   20:11    1:28   1:16   0.07s -tcsh
+btaint01 pts/31   10.245.141.109   19:29   17:05  24.05s  0.14s -tcsh
+eorozc01 pts/32   localhost:23.0   20:04    2:41   0.09s  0.04s -bin/tcsh
+shalls01 pts/33   wr-130-64-196-11 20:09    8.00s  2.34s  0.08s -tcsh
+bthorn03 pts/34   10.245.146.96    20:18    3.00s  0.28s  0.19s vim -p main.cpp hand.h hand.cpp List_dynamic_array.h List_
+spector  pts/35   c-76-19-146-188. 20:19    4:50   0.09s  0.00s ledit impcore
+sbarlo02 pts/36   130.64.23.165    19:23   57:40  11.36s  0.09s -tcsh
+lstern05 pts/37   130.64.98.6      20:09    2:21  16.94s  0.09s -tcsh
+mbelki01 pts/38   10.245.151.97    20:06   19:20   0.09s  0.09s -tcsh
+ccowel02 pts/39   10.245.151.242   19:17   48:16   7:55   0.07s -tcsh
+agalan01 pts/40   10.247.142.70    20:25    1.00s  0.60s  0.09s -tcsh
+lguerr02 pts/41   c-24-62-94-8.hsd 19:37   47:21   0.09s  0.00s ./a.out
+lhague01 pts/42   10.245.148.121   20:06   19:13   0.08s  0.08s -tcsh
+jkerns01 pts/43   wr-130-64-94-99. 20:07   14:43   2.32s  0.09s -tcsh
+tjoshi01 pts/44   d-p-14-55.eecs.t 19:45    1:13  18.91s  0.13s -tcsh
+cwollm01 pts/45   c-66-31-40-10.hs 17:18    1:53m  0.22s  0.06s vim add8.cpp
+jgrace03 pts/46   resnet142-128.me 20:07   17:59   0.07s  0.07s -tcsh
+hjin04   pts/47   10.245.145.79    20:22    2:00   0.76s  0.66s emacs str_to_int.h
+emille19 pts/48   wr-130-64-195-20 19:49   35:24   5:46   0.08s -tcsh
+dharri14 pts/49   10.247.138.87    20:23   44.00s  0.10s  0.10s -tcsh
+spokha01 pts/50   c-76-119-49-66.h 19:52   33:10   0.10s  0.10s -tcsh
+rqin01   pts/51   -                20:25    0.00s  0.10s  0.06s w
+edobra01 pts/52   resnet155-189.me 19:57   28:04   0.09s  0.09s -tcsh
+ccasey01 pts/53   d-p-13-253.eecs. 20:08   12.00s  0.12s  0.12s -bash
+jbrone01 pts/54   c-98-217-9-35.hs 20:09   16:15   0.11s  0.11s -tcsh
+kfisher  pts/56   sslvpn23.eecs.tu 20:11   13:24   0.11s  0.11s -tcsh
+afalk01  pts/55   10.245.150.228   19:58   27:07   0.08s  0.08s -tcsh
+mpatel13 pts/57   10.245.148.214   20:09    1:37   0.09s  0.09s -tcsh
+kander12 pts/58   wr-130-64-92-204 19:58   27:20   0.07s  0.07s -tcsh
+jmatth03 pts/59   209-6-46-9.c3-0. 20:11   14:04   0.08s  0.08s -tcsh
+msheldon pts/60   pool-74-104-164- 20:11    9:39   0.06s  0.02s man strcmp
+cwollm01 pts/63   c-66-31-40-10.hs 19:58    0.00s  0.21s  0.09s vim yoda.cpp
+mstewa07 pts/68   10.245.151.26    19:59   26:28   0.09s  0.09s -tcsh
+rqin01(RuiQin)@dell24:~/Desktop/comp11/hw1 > pwd
+/h/rqin01/Desktop/comp11/hw1
+rqin01(RuiQin)@dell24:~/Desktop/comp11/hw1 > ls -l
+total 4
+-rw-------. 1 rqin01 other 618 Jan 27 20:19 digits.cpp
+-rw-------. 1 rqin01 other   0 Jan 27 20:25 typescript
+rqin01(RuiQin)@dell24:~/Desktop/comp11/hw1 > exit
+exit
+
+Script done on Wed 27 Jan 2016 08:26:05 PM EST

@@ -1,0 +1,13 @@
+
+
+int sum = 0;
+int i = 0;
+int nums[] = {8 10 3 2 9 0};
+
+while ((i < SPACE) && (nums[i] != SENTINEL)) {
+        total = total + nums[i];
+        i = i + 1;
+}
+
+interation i
+    nums[] sum 1. 0 8 8 2. 1 10 18 3. 2 3 21 4. 3 2 23 5. 4 9 32 6. 5 0 32

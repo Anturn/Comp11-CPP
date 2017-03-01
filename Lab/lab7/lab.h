@@ -1,0 +1,27 @@
+// lab.h
+// header file for labtest0.cpp and lab.cpp
+#ifndef LAB_H
+#define LAB_H
+
+#include<string>
+
+class Lab {
+
+    public:
+	void	init();			// sets up lab, remove dead squirrels
+	bool	add(std::string);	// does not allow duplicates
+	void	print();		// prints names one per line
+	bool	is_in(std::string);	// is name in this lab
+	void	set_title(std::string);	// set title
+	std::string	get_title();	// return the current title
+	bool	drop(std::string);	// drop a name from list
+	int	get_count();		// how many are enrolled in this lab
+	int	get_capacity();		// get maximum enrollment
+        void    show();
+    private:
+	static const int LAB_SPACE = 5;  // need 'static' for class constants
+	std::string	title;
+	std::string	names[LAB_SPACE];
+};
+#endif
+
